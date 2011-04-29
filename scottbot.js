@@ -84,7 +84,7 @@ client.addListener("message", function(from, to, message) {
                 client.say(target, "nom nom nom");
             } else if (message.match(/".*" is funny/i)) {
                 phrase = message.match(/".*"/i).slice(1,-1);
-                bayes.train(lastLine[phrase], "funny", function() {
+                bayes.train(phrase, "funny", function() {
                     client.say(target, "ok!");
                 });
             }
