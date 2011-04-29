@@ -74,9 +74,7 @@ scottbot makes a terrible joke, you can say "no"::
 Now scottbot has trained "did you close out bug 1234" as a "notfunny" example.
 You don't have to wait for scottbot to try, you can say "no" and it will train
 the previous statement as unfunny. (Unfortunately, right now, it still says
-"sorry.")
-
-::
+"sorry.")::
 
     <foo> when is the freeze date for 1.2.3?
     <foo> mscott: no
@@ -84,6 +82,12 @@ the previous statement as unfunny. (Unfortunately, right now, it still says
 
 scottbot trained "when is the freeze date for 1.2.3" as a "notfunny" example.
 
+You can also train scottbot explicity by telling it a funny phase using the 
+following syntax::
+    
+    <foo> mscott: "foo bar" is funny
+    <mscott> ok!
+    
 
 Bootstrapping
 -------------
@@ -111,8 +115,6 @@ TODO
 ====
 
 * Train/bootstrap with `data from Twitter`_.
-
-* Train phrases: ``scottbot: "foo bar" is funny`` (or something).
 
 * Some local bootstrap data and a way to load it.
 

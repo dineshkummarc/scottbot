@@ -82,6 +82,11 @@ client.addListener("message", function(from, to, message) {
                 bayes.train(lastLine[target], "funny", function() {});
             } else if (message.match(/botsnack/i)) {
                 client.say(target, "nom nom nom");
+            } else if (message.match(/".*" is funny/i)) {
+                phrase = message.match(/".*"/i).slice(1,-1);
+                bayes.train(lastLine[phrase], "funny", function() {
+                    client.say(target, "ok!");
+                });
             }
         } else {
             lastLine[target] = message;
