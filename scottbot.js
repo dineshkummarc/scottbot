@@ -83,7 +83,7 @@ client.addListener("message", function(from, to, message) {
             } else if (message.match(/botsnack/i)) {
                 client.say(target, "nom nom nom");
             } else if (message.match(/".*" is funny/i)) {
-                phrase = message.match(/".*"/i).slice(1,-1);
+                phrase = message.match(/".*"/i)[0].slice(1,-1);
                 bayes.train(phrase, "funny", function() {
                     client.say(target, "ok!");
                 });
